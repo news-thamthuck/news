@@ -851,22 +851,6 @@
             });
         }
     
-        // 4. 댓글 삭제 함수
-        function deleteComment(id) {
-            if (!confirm('댓글을 삭제하시겠습니까?')) return;
-            
-            const savedData = localStorage.getItem('news_comments_data');
-            let comments = savedData ? JSON.parse(savedData) : [];
-            
-            // 클릭한 ID만 제외하고 필터링
-            comments = comments.filter(function(item) {
-                return item.id !== id;
-            });
-            
-            localStorage.setItem('news_comments_data', JSON.stringify(comments));
-            loadComments();
-        }
-    
         // SNS 공유 함수들
         function shareTwitter() {
             window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(document.title)}`, '_blank');
