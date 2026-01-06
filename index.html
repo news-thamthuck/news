@@ -490,7 +490,7 @@
         }
 
         .footer-info {
-            font-size: 18px;
+            font-size: 15px;
             font-weight: 500;
             line-height: 2;
         }
@@ -506,8 +506,10 @@
 
         .footer-links {
             display: flex;
-            gap: 20px;
-            margin-bottom: 30px;
+            flex-wrap: wrap;     /* 줄바꿈 허용 */
+            gap: 10px 20px;       /* 세로 10px, 가로 20px 간격 */
+            max-width: 400px;     /* 한 줄에 3개씩 보이도록 제한 */
+            line-height: 1.6;
         }
 
         .footer-links a {
