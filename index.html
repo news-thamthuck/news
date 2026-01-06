@@ -782,7 +782,7 @@
         
         document.getElementById('current-date').textContent = 
             `${year}년 ${month}월 ${date}일 ${day}`;
-
+    
         // 댓글 추가 기능
         function addComment() {
             const nameInput = document.getElementById('commentName');
@@ -806,8 +806,21 @@
             // 새 댓글 생성
             const newComment = document.createElement('div');
             newComment.className = 'comment-item';
-            newComment
+            newComment.innerHTML = `
+                <div class="comment-author">
+                    ${name} <span class="comment-time">${new Date().toLocaleString()}</span>
+                </div>
+                <div class="comment-text">${text}</div>
+            `;
             
+            commentList.prepend(newComment); // 최신 댓글을 위로
+            commentCount.textContent = commentList.children.length;
+    
+            // 입력 초기화
+            nameInput.value = '';
+            textInput.value = '';
+        }
+    
         // 공유 기능
         function shareTwitter() {
             const url = window.location.href;
@@ -830,3 +843,4 @@
                 alert('링크 복사에 실패했습니다.');
             });
         }
+    </script>
