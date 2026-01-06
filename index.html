@@ -772,6 +772,102 @@
     </footer>
 
     <script>
+        // 1. 페이지 로드 시 기존 댓글 불러오기
+        window.onload = function() {
+            displayCurrentDate();
+            loadComments();
+        };
+        
+        // 현재 날짜 표시 함수
+        function displayCurrentDate() {
+            const now = new Date();
+            const days = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
+            const year = now.getFullYear();
+            const month = now.getMonth() + 1;
+            const date = now.getDate();
+            const day = days[now.getDay()];
+            
+            document.getElementById('current-date').textContent = 
+                `${year}년 ${month}월 ${date}일 ${day}`;
+        }
+        
+        // 2. 댓글 저장 및 추가 함수
+        function addComment() {
+            const nameInput = document.getElementById('commentName');
+            const textInput = document.getElementById('commentText');
+            
+            const name = nameInput.value.trim();
+            const text = textInput.value.trim();
+            
+            if (!name || !text) {
+                alert('이름과 내용을 모두 입력해주세요.');
+                return;
+            }
+        
+            // 댓글 객체 생성
+            const newComment = {
+                id: Date.now(), // 고유 식별자
+                name: name,
+                text: text,
+                time: new Date().toLocaleString()
+            };
+        
+            // 로컬 스토리지에서 기존 댓글 리스트 가져오기 (없으면 빈 배열)
+            const comments = JSON.parse(localStorage.getItem('news_comments') || '[]');
+            
+            // 새 댓글을 배열 앞에 추가
+            comments.unshift(newComment);
+            
+            // 로컬 스토리지에 다시 저장
+            localStorage.setItem('news_comments', JSON.stringify(comments));
+        
+            // 입력창 초기화 및 댓글 화면 갱신
+            nameInput.value = '';
+            textInput.value = '';
+            loadComments();
+        }
+        
+        // 3. 로컬 스토리지의 데이터를 화면에 그리는 함수
+        function loadComments() {
+            const commentList = document.getElementById('commentList');
+            const commentCount = document.getElementById('commentCount');
+            
+            // 저장된 댓글 가져오기
+            const comments = JSON.parse(localStorage.getItem('news_comments') || '[]');
+            
+            // 화면 초기화 후 다시 그리기
+            commentList.innerHTML = '';
+            commentCount.textContent = comments.length;
+        
+            comments.forEach(comment => {
+                const commentItem = document.createElement('div');
+                commentItem.className = 'comment-item';
+                commentItem.innerHTML = `
+                    <div class="comment-author">
+                        ${comment.name} <span class="comment-time">${comment.time}</span>
+                    </div>
+                    <div class="comment-text">${comment.text}</div>
+                `;
+                commentList.appendChild(commentItem);
+            });
+        }
+        
+        // 공유 기능 (기존과 동일)
+        function shareTwitter() {
+            const url = window.location.href;
+            const text = document.title;
+            window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`, '_blank');
+        }
+        
+        function shareFacebook() {
+            const url = window.location.href;
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+        }
+        
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => alert('링크가 복사되었습니다.'));
+        }
+        
         // 현재 날짜 표시
         const now = new Date();
         const days = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
