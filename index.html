@@ -1,75 +1,272 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <!-- 기존 head 부분 유지 -->
-</head>
-<body>
-  <!-- 기존 상단 코드 유지 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[속보] 일본 최대 조직 '북진회' 핵심 인물 다수 사망… 한국인 최 모 씨 실종 - 일간 시사</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 
-  <div class="main-container">
-    <main>
-      <article class="article-section">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+            background-color: #f8f9fa;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        .top-utility {
+            background-color: #f1f3f5;
+            border-bottom: 1px solid #dee2e6;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .top-utility-inner {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 8px 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        header {
+            background: #fff;
+            border-bottom: 1px solid #e9ecef;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-main {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 36px;
+            font-weight: 900;
+        }
+
+        nav {
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .nav-menu {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            font-size: 12px;
+            font-weight: 600;
+            color: #495057;
+            text-decoration: none;
+        }
+
+        .main-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .article-section {
+            background: #fff;
+            padding: 50px;
+        }
+
+        .article-category {
+            color: #d63031;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .article-title {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .article-meta {
+            padding: 20px 0;
+            border-top: 1px solid #e9ecef;
+            border-bottom: 1px solid #e9ecef;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        .meta-item {
+            margin-bottom: 4px;
+        }
+
+        .reporter-name {
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .social-share {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .share-btn {
+            padding: 8px 14px;
+            border: 1px solid #dee2e6;
+            background: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        .article-body {
+            font-size: 17px;
+            line-height: 1.85;
+        }
+
+        .article-body p {
+            margin-bottom: 28px;
+        }
+
+        footer {
+            background: #212529;
+            color: #adb5bd;
+            padding: 50px 0;
+            margin-top: 60px;
+        }
+
+        .footer-inner {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .footer-info {
+            font-size: 13px;
+            line-height: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="top-utility">
+    <div class="top-utility-inner">
+        <div id="current-date"></div>
+        <div>로그인 | 회원가입 | 구독</div>
+    </div>
+</div>
+
+<header>
+    <div class="header-main">
+        <div class="logo">일간 시사</div>
+    </div>
+</header>
+
+<nav>
+    <ul class="nav-menu">
+        <li><a href="#">속보</a></li>
+        <li><a href="#">정치</a></li>
+        <li><a href="#">경제</a></li>
+        <li><a href="#">사회</a></li>
+        <li><a href="#">국제</a></li>
+    </ul>
+</nav>
+
+<div class="main-container">
+    <article class="article-section">
         <div class="article-category">속보</div>
 
-        <h1 class="article-title">일본 최대 조직 '북진회' 핵심 인물 다수 사망… 한국인 최 모 씨 실종</h1>
+        <h1 class="article-title">
+            일본 최대 조직 '북진회' 핵심 인물 다수 사망… 한국인 최 모 씨 실종
+        </h1>
 
-        <!-- ✅ 메타 정보 수정 시작 -->
+        <!-- ✅ 메타 정보 -->
         <div class="article-meta">
-          <div class="meta-item">
-            <span class="reporter-name">
-              김새삼 기자 (<a href="https://x.com/thamthuck" target="_blank">@thamthuck</a>)
-            </span>
-          </div>
-          <div class="meta-item">
-            제보 | <a href="https://spin-spin.com/thamthuck" target="_blank">https://spin-spin.com/thamthuck</a>
-          </div>
-          <div class="meta-item">입력 2025.10.03</div>
+            <div class="meta-item reporter-name">
+                김새삼 기자 (<a href="https://x.com/thamthuck" target="_blank">@thamthuck</a>)
+            </div>
+            <div class="meta-item">
+                제보 | <a href="https://spin-spin.com/thamthuck" target="_blank">
+                https://spin-spin.com/thamthuck</a>
+            </div>
+            <div class="meta-item">
+                입력 2025.10.03
+            </div>
         </div>
-        <!-- ✅ 메타 정보 수정 끝 -->
 
-        <!-- ✅ 공유 버튼 수정 시작 -->
+        <!-- ✅ 공유 버튼 -->
         <div class="social-share">
-          <button class="share-btn" onclick="shareToTwitter()">트위터</button>
-          <button class="share-btn" onclick="shareToFacebook()">페이스북</button>
-          <button class="share-btn" onclick="nativeShare()">공유</button>
+            <button class="share-btn" onclick="shareToTwitter()">트위터</button>
+            <button class="share-btn" onclick="shareToFacebook()">페이스북</button>
+            <button class="share-btn" onclick="nativeShare()">공유</button>
         </div>
-        <!-- ✅ 공유 버튼 수정 끝 -->
 
-        <!-- 기존 기사 본문 등 유지 -->
+        <div class="article-body">
+            <p>마카오 인근 해상에서 카지노 크루즈를 운영하던 일본 최대 범죄 조직 ‘북진회’에 대한 한일 경찰 당국의 합동 소탕 작전이 전격 실시됐다.</p>
+            <p>이번 작전으로 북진회 핵심 간부 12명이 사망했으며 조직 지휘부는 사실상 와해됐다.</p>
+            <p>실종된 한국인 최 모 씨의 행방에 대해서는 수사가 진행 중이다.</p>
+        </div>
+    </article>
+</div>
 
-      </article>
-    </main>
-  </div>
+<footer>
+    <div class="footer-inner">
+        <div class="footer-logo">일간 시사</div>
+        <div class="footer-info">
+            @thamthuck<br>
+            홈 | <a href="https://x.com/thamthuck" target="_blank">https://x.com/thamthuck</a><br>
+            제보 | <a href="https://spin-spin.com/thamthuck" target="_blank">https://spin-spin.com/thamthuck</a>
+        </div>
+    </div>
+</footer>
 
-  <!-- 기존 푸터 유지 -->
+<script>
+    // 날짜
+    const now = new Date();
+    document.getElementById('current-date').textContent =
+        `${now.getFullYear()}년 ${now.getMonth()+1}월 ${now.getDate()}일`;
 
-  <!-- ✅ 스크립트 추가 시작 -->
-  <script>
     function shareToTwitter() {
-      const url = encodeURIComponent(window.location.href);
-      const text = encodeURIComponent(document.title);
-      window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+        const url = encodeURIComponent(location.href);
+        const text = encodeURIComponent(document.title);
+        window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`);
     }
 
     function shareToFacebook() {
-      const url = encodeURIComponent(window.location.href);
-      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+        const url = encodeURIComponent(location.href);
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`);
     }
 
     function nativeShare() {
-      if (navigator.share) {
-        navigator.share({
-          title: document.title,
-          text: '이 기사 함께 보세요!',
-          url: window.location.href
-        })
-        .then(() => console.log('공유 완료'))
-        .catch((error) => console.log('공유 실패:', error));
-      } else {
-        alert("이 브라우저는 공유 기능을 지원하지 않습니다.");
-      }
+        if (navigator.share) {
+            navigator.share({
+                title: document.title,
+                url: location.href
+            });
+        } else {
+            alert('이 브라우저는 공유 기능을 지원하지 않습니다.');
+        }
     }
-  </script>
-  <!-- ✅ 스크립트 추가 끝 -->
+</script>
+
 </body>
 </html>
