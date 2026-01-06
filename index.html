@@ -665,12 +665,6 @@
                     </button>
                 </div>
 
-                <div class="social-share">
-                    <button class="share-btn" onclick="shareTwitter()">트위터</button>
-                    <button class="share-btn" onclick="shareFacebook()">페이스북</button>
-                    <button class="share-btn" onclick="copyLink()">공유</button>
-                </div>
-
                 <div class="article-body">
                     <p>마카오 인근 해상에서 카지노 크루즈를 운영하던 일본 최대 범죄 조직 '북진회'에 대한 한일 경찰 당국의 합동 소탕 작전이 전격 실시됐다.</p>
 
@@ -777,27 +771,7 @@
     </footer>
 
     <script>
-        function shareTwitter() {
-            const url = window.location.href;
-            const text = document.title;
-            const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
-            window.open(twitterUrl, '_blank');
-        }
-        
-        function shareFacebook() {
-            const url = window.location.href;
-            const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-            window.open(facebookUrl, '_blank');
-        }
-        
-        function copyLink() {
-            const url = window.location.href;
-            navigator.clipboard.writeText(url).then(() => {
-                alert('링크가 복사되었습니다.');
-            }).catch(err => {
-                alert('링크 복사에 실패했습니다.');
-            });
-        }
+
 
         // 현재 날짜 표시
         const now = new Date();
@@ -834,3 +808,25 @@
             const newComment = document.createElement('div');
             newComment.className = 'comment-item';
             newComment
+
+        function shareTwitter() {
+            const url = window.location.href;
+            const text = document.title;
+            const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+            window.open(twitterUrl, '_blank');
+        }
+        
+        function shareFacebook() {
+            const url = window.location.href;
+            const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+            window.open(facebookUrl, '_blank');
+        }
+        
+        function copyLink() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                alert('링크가 복사되었습니다.');
+            }).catch(err => {
+                alert('링크 복사에 실패했습니다.');
+            });
+        }
