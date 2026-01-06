@@ -628,7 +628,8 @@
                 <div class="article-category">속보</div>
                 
                 <h1 class="article-title">일본 최대 조직 '북진회' 핵심 인물 다수 사망… 한국인 최 모 씨 실종</h1>
-
+                
+                <div class="article-meta">
                     <div class="meta-item">
                         <span class="reporter-name">김새삼 기자 (<a href="https://x.com/thamthuck" target="_blank">@thamthuck</a>)</span>
                     </div>
@@ -771,8 +772,6 @@
     </footer>
 
     <script>
-
-
         // 현재 날짜 표시
         const now = new Date();
         const days = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
@@ -808,25 +807,3 @@
             const newComment = document.createElement('div');
             newComment.className = 'comment-item';
             newComment
-
-        function shareTwitter() {
-            const url = window.location.href;
-            const text = document.title;
-            const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
-            window.open(twitterUrl, '_blank');
-        }
-        
-        function shareFacebook() {
-            const url = window.location.href;
-            const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-            window.open(facebookUrl, '_blank');
-        }
-        
-        function copyLink() {
-            const url = window.location.href;
-            navigator.clipboard.writeText(url).then(() => {
-                alert('링크가 복사되었습니다.');
-            }).catch(err => {
-                alert('링크 복사에 실패했습니다.');
-            });
-        }
